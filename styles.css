@@ -1,0 +1,75 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #002244;
+  color: #FFD700;
+  padding: 10px 20px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #FFD700;
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to bottom, #002244, #FFD700);
+  color: #fff;
+}
+
+.slider {
+  text-align: center;
+}
+
+.service-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.service-card {
+  background: #FFD700;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.contact form,
+.order form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.social-links {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.logo {
+  font-size: 24px;
+  transition: opacity 2s ease-in-out;
+}
+
+.logo.fade-out {
+  opacity: 0;
+}
