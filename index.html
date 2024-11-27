@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research Consultancy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Navbar -->
+    <header class="header">
+      <div class="logo" :class="{ 'fade-out': logoLoaded }">Research Consultancy</div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#order">Place Order</a></li>
+          <li><a href="#socials">Socials</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Home -->
+    <section id="home" class="home">
+      <div class="slider">
+        <div class="slide" v-for="(slide, index) in slides" :key="index">
+          <h1>{{ slide.title }}</h1>
+          <p>{{ slide.description }}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="services">
+      <h2>Our Services</h2>
+      <div class="service-list">
+        <div v-for="service in services" :key="service.id" class="service-card">
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.description }}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Us -->
+    <section id="contact" class="contact">
+      <h2>Contact Us</h2>
+      <form @submit.prevent="submitContact">
+        <input type="text" placeholder="Your Name" v-model="contact.name" required>
+        <input type="email" placeholder="Your Email" v-model="contact.email" required>
+        <textarea placeholder="Your Message" v-model="contact.message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+    <!-- Place Order -->
+    <section id="order" class="order">
+      <h2>Place an Order</h2>
+      <form @submit.prevent="placeOrder">
+        <input type="text" placeholder="Service Title" v-model="order.service" required>
+        <textarea placeholder="Details" v-model="order.details" required></textarea>
+        <button type="submit">Submit Order</button>
+      </form>
+    </section>
+
+    <!-- Socials -->
+    <section id="socials" class="socials">
+      <h2>Connect With Us</h2>
+      <ul class="social-links">
+        <li><a href="https://twitter.com">Twitter</a></li>
+        <li><a href="https://linkedin.com">LinkedIn</a></li>
+        <li><a href="https://facebook.com">Facebook</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <script src="app.js"></script>
+</body>
+</html>
